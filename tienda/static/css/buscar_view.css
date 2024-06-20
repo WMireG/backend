@@ -1,10 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    border:0;
+    border: 0;
     box-sizing: border-box;
     list-style: none;
 }
+
 /* Estilos generales para el contenedor */
 .container-principal {
     max-width: 1200px;
@@ -22,44 +23,44 @@
 /* Estilos para las tarjetas */
 .card {
     display: flex;
+    flex-direction: row; /* Apila elementos uno debajo del otro */
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     margin-bottom: 20px;
-
 }
 
-/*contenedor imagen y descripcion*/
-.row {
-
-    flex: 1; /* Ocupa todo el espacio disponible */
-    padding: 45px 50px 45px;
-    /*display: flex;*/
-    flex-direction: column;
-    display:block; 
+/* Contenedor de imagen y descripción */
+.results-container {
+    display: flex;
+    flex-direction: column; /* Apila tarjetas una debajo de la otra */
+    gap: 20px; /* Espaciado entre tarjetas */
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos para la imagen en las tarjetas */
+.card-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 .card img {
     width: 300px; /* Tamaño mediano para la imagen */
     height: 300px; /* Tamaño mediano para la imagen */
     object-fit: cover;
-    border-radius: 10px 0 0 10px; /* Redondea las esquinas de la imagen en la parte izquierda */
+    border-radius: 10px; /* Redondea las esquinas de la imagen */
 }
 
 /* Estilos para el cuerpo de la tarjeta */
 .card-body {
-    flex: 1; /* Ocupa todo el espacio disponible */
-    padding: 45px 50px 45px;
-    /*display: flex;*/
-    flex-direction: column;
-    display:block;
+    padding: 75px 30px 75px;
 }
 
 /* Estilos para el título de la tarjeta */
@@ -67,6 +68,7 @@
     font-size: 20px;
     margin-bottom: 10px;
     color: #333;
+    text-align: center;
 }
 
 /* Estilos para el subtítulo de la tarjeta */
@@ -74,12 +76,12 @@
     font-size: 16px;
     margin-bottom: 10px;
     color: #777;
+    text-align: center;
 }
 
 /* Estilos para el texto de la tarjeta */
 .card-text {
     font-size: 14px;
-    color: #555;
-    flex: 1; /* Ocupa el espacio restante */
+    color: #555
 }
 
