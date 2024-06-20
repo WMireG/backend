@@ -1,0 +1,59 @@
+/* Estilos específicos para el catálogo */
+#catalogo {
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 50px 0; /* Espaciado interno */
+    text-align: center;
+}
+
+.container > h2 {
+    text-align: center;
+}
+
+.discos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.disco {
+    width: 300px;
+    margin: 10px; /* Reducir el margen */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.disco img {
+    max-width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.disco .info {
+    padding: 20px;
+}
+
+.disco h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.disco p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.disco .precio {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+/* Estilo para eliminar subrayado en enlaces dentro de la sección de productos */
+.catalogo .disco a {
+    text-decoration: none;
+}

@@ -1,0 +1,55 @@
+/* Estilos para el contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para el contenedor del producto */
+.producto-detalle {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+/* Estilos para la imagen del producto */
+.producto-detalle .imagen {
+    flex: 1;
+}
+
+.producto-detalle .imagen img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para la información del producto */
+.producto-detalle .info {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.producto-detalle h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.producto-detalle p {
+    margin-bottom: 8px;
+}
+
+/* Estilos para el formulario de agregar al carrito */
+.producto-detalle form {
+    margin-top: 20px;
+}
+
+.producto-detalle form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.producto-detalle form button:hover {
+    background-color: #0056b3;
+}

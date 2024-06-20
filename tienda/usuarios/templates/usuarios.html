@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%load static %}
+{%block extra_head%}
+<link rel="stylesheet" href="{% static 'css/usuarios.css' %}">
+{%endblock%}
+{%block title%} Mi Usuario {%endblock%}
+{%block content%}
+<body>
+    <main>
+        <section id="perfil">
+            <h2>Mi Perfil</h2>
+            <p>Nombre: Juan Pérez</p>
+            <p>Correo Electrónico: juan@example.com</p>
+            <!-- Más información del perfil -->
+        </section>
+</body>
+{%endblock%}

@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_head %} {% endblock %}
+    <title>{% block title %} Tienda de discos {% endblock %}</title>
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Tienda de Discos</h1>
+            
+            <!-- Formulario de búsqueda -->
+            <form action="{% url 'buscar' %}" method="GET" class="search-form">
+                <input type="text" name="q" placeholder="Buscar...">
+                <button type="submit">Buscar</button>
+            </form>
+            
+            <ul>
+                <li><a href='{% url 'catalogo' %}'>Catálogo</a></li>
+                <li><a href='{% url 'carrito' %}'>Mi Carrito</a></li>
+                <li><a href='{% url 'pedidos' %}'>Mis Pedidos</a></li>
+                <li><a href='{% url 'usuarios' %}'>Usuario</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Contenido específico de cada página -->
+    {% block content %}{% endblock %}
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Tienda de discos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

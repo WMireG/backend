@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/catalogo.css' %}">
+{% endblock %}
+
+{% block title %} Catálogo {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Catálogo de Discos</h2>
+    <div class="discos">
+        {% for producto in productos %}
+        <div class="disco">
+            <a href="{% url 'detalle_producto' producto.id %}">
+                <img src="{{ producto.imagen_tapa.url }}" alt="{{ producto.nombre_disco }}">
+            </a>
+            <h3>
+                <a href="{% url 'detalle_producto' producto.id %}">
+                    {{ producto.nombre_disco }}
+                </a>
+            </h3>
+            <p>
+                <a href="{% url 'detalle_producto' producto.id %}">
+                    Artista: {{ producto.nombre_artista }}
+                </a>
+            </p>
+            <p>Precio: ${{ producto.precio }}</p>
+
+            <!-- Botón de agregar al carrito -->
+            <form action="{% url 'agregar_producto' producto.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Agregar al carrito</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

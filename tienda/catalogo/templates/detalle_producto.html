@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/detalle_producto.css' %}">
+{% endblock %}
+
+{% block title %} Detalle del Producto {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="producto-detalle">
+        <div class="imagen">
+            <img src="{{ producto.imagen_tapa.url }}" alt="{{ producto.nombre_disco }}">
+        </div>
+        <div class="info">
+            <h2>{{ producto.nombre_disco }}</h2>
+            <p><strong>Artista:</strong> {{ producto.nombre_artista }}</p>
+            <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+            <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+            <form action="{% url 'agregar_producto' producto.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Agregar al Carrito</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
