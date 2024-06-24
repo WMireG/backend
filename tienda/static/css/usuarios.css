@@ -1,27 +1,40 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header, main {
+.container {
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
-}
-
-/* Estilos del encabezado */
-header {
-    background-color: #333;
-    color: #fff;
     text-align: center;
 }
 
-/* Estilos del contenido principal */
-main {
-    padding: 20px;
+.perfil-info {
+    margin-bottom: 20px;
 }
 
-section {
-    margin-bottom: 40px;
-    border-bottom: 1px solid #ccc;
+.boton-cerrar-sesion {
+    margin-top: 20px;
+}
+
+.boton-cerrar-sesion button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-cerrar-sesion button:hover {
+    background-color: #0056b3;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
 }
