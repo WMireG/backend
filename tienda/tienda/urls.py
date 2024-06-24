@@ -32,8 +32,7 @@ urlpatterns = [
     path("catalogo/", include ("catalogo.urls")),
     path("pedidos/", include ("pedidos.urls")),
     path("usuarios/", include ("usuarios.urls")),
-    
-    
+    #path('login/', include("login.html")), 
 ]
 
 if settings.DEBUG:

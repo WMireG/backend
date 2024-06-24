@@ -18,11 +18,12 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
+    username = models.CharField(max_length=255,unique=True)
     email = models.EmailField(unique=True)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     numero_de_telefono = models.CharField(max_length=15, blank=True, null=True)
-    address = models.TextField(blank=True, null=True)
+    address = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
