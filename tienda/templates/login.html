@@ -1,0 +1,64 @@
+{%extends "base.html"%}
+{%load static %}
+{%block extra_head%}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{%endblock%}
+{%block title%} Pagina principal de la tienda {%endblock%}
+{%block content%}
+    <body class="h-100">
+        <div class="authincation h-100">
+            <div class="container-fluid h-100">
+                <div class="row justify-content-center h-100 align-items-center">
+                    <div class="col-md-3">
+                        <div class="authincation-content">
+                            <div class="row no-gutters">
+                                <div class="col-xl-12">
+                                    <div class="auth-form">
+                                        <h4 class="text-center mb-4">Iniciar sesión en tu cuenta</h4>
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <label><strong>Nombre de usuario</strong></label>
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="{{ form.username.id_for_label }}"
+                                                    name="{{ form.username.name }}"
+                                                    placeholder="Nombre de usuario"
+                                                />
+                                            </div>
+                                            <div class="form-group">
+                                                <label><strong>Contraseña</strong></label>
+                                                <input
+                                                    type="password"
+                                                    class="form-control"
+                                                    id="{{ form.password.id_for_label }}"
+                                                    name="{{ form.password.name }}"
+                                                    placeholder="Contraseña"
+                                                />
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                                            </div>
+                                            <div class="new-account mt-3">
+                                                <p>
+                                                    ¿Aún no tenes cuenta?
+                                                    <a class="text-primary" href="{% url 'registro' %}"> ¡Crea una!</a>
+                                                </p>
+                                            </div>
+                                            {% for message in messages %}
+                                            <div class="form-group mt-3">
+                                                <p class="error-message text-danger">{{ message }}</p>
+                                            </div>
+                                            {% endfor %}
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+{%endblock%}
