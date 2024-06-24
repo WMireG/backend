@@ -1,0 +1,18 @@
+{%extends "base.html"%}
+{%load static %}
+{%block extra_head%}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{%endblock%}
+{%block title%} Pagina principal de la tienda {%endblock%}
+{%block content%}
+
+    <div class="container">
+        <div class="logout-message">
+            <h1>¡Has cerrado sesión correctamente!</h1>
+            <p>Gracias por usar nuestro servicio. ¿Te gustaría iniciar sesión nuevamente?</p>
+        </div>
+        <div class="logout-links">
+            <a href="{% url 'login' %}" class="btn btn-primary">Iniciar sesión nuevamente</a>
+       </div>
+    </div>
+{% endblock %}

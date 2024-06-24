@@ -29,6 +29,10 @@ class RegistrationForm(UserCreationForm):
     address = forms.CharField(
         max_length=15, 
     )
+    username = forms.CharField(
+        max_length=255,
+        help_text="Requerido"
+    )
 
     
 

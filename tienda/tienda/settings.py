@@ -143,6 +143,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #deberia ser para que Index.html sea la pagina principal
 AUTH_USER_MODEL = 'usuarios.CustomUser'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/auth/login'
-LOGIN_URL = '/auth/login'
+LOGIN_REDIRECT_URL = '/usuarios'
+LOGOUT_REDIRECT_URL = '/catalogo'
+LOGIN_URL = '/usuario/login'

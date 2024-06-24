@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic.edit import CreateView
 from django.views.generic import View, TemplateView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import logout
 
 from autenticacion.forms import RegistrationForm
 
@@ -21,8 +22,11 @@ class CustomLoginView(LoginView):
         return super().form_invalid(form)
     
 
-class CustomLogoutView(LogoutView):
-    pass
+# class CustomLogoutView(LogoutView):
+#     next_page = '/usuario'
+#     def dispatch(self, request, *args, **kwargs):
+#         messages.success(request, "¡Has cerrado sesión correctamente!")
+#         return super().dispatch(request, *args, **kwargs)
 
 class RegistrationView(CreateView):
     form_class = RegistrationForm
@@ -43,5 +47,23 @@ class RegistrationView(CreateView):
                 messages.error(self.request, f"{field}: {error}")
         return super().form_invalid(form)
 
+# class LogoutConfirmationView(LoginView):
+#     template_name = "logout.html"
+
+#     def form_invalid(self,form):
+#         messages.error(
+#             self.request, "Datos incorrectos, por favor intentalo de nuevo"
+#         )
+#         return super().form_invalid(form)
 
 
+class LogoutConfirmationView(LoginView):
+    template_name = 'logout.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+    def post(self, request, *args, **kwargs):
+        logout(request)
+        messages.success(request, "¡Has cerrado sesión correctamente!")
+        return redirect('catalogo')  # Reemplaza con la URL a la que quieres redirigir
