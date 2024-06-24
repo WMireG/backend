@@ -5,14 +5,14 @@ from django.core.exceptions import ValidationError
 
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
-    list_display = ('email', 'nombre', 'apellido', 'is_staff')
+    list_display = ('username', 'nombre', 'apellido', 'is_staff')
     list_filter = ('is_staff', 'is_superuser', 'is_active')
     search_fields = ('email', 'nombre', 'apellido')
     ordering = ('email',)
 
     fieldsets = (
-        (None, {'fields': ('email', 'password')}),
-        ('Personal Info', {'fields': ('nombre', 'apellido', 'numero_de_telefono', 'address')}),
+        (None, {'fields': ('username', 'password')}),
+        ('Personal Info', {'fields': ('nombre', 'apellido', 'email', 'numero_de_telefono', 'address')}),
         ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser', 'groups', 'user_permissions')}),
     )
     

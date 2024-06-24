@@ -12,10 +12,12 @@
         <div class="container">
             <h1>Mi Perfil</h1>
             <div class="perfil-info">
-                <p><strong>Nombre:</strong> {{ user.get_full_name }}</p>
+                <p><strong>Nombre:</strong> {{ user.nombre }}</p>
+                <p><strong>Apellido:</strong> {{ user.apellido }}</p>
                 <p><strong>Correo Electrónico:</strong> {{ user.email }}</p>
-                <p><strong>Usuario:</strong> {{ user.get_username }}</p>
-                <!-- Aquí puedes incluir más información del perfil si lo deseas -->
+                <p><strong>Usuario:</strong> {{ user.username }}</p>
+                <p><strong>Telefono:</strong> {{ user.numero_de_telefono }}</p>
+                <p><strong>Direccion:</strong> {{ user.address }}</p>
             </div>
             <div class="boton-cerrar-sesion">
                 <form action="{% url 'logout' %}" method="post">
