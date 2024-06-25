@@ -1,23 +1,29 @@
-{%extends "base.html"%}
-{%load static %}
-{%block extra_head%}
+{% extends "base.html" %}
+{% load static %}
+{% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/registro.css' %}">
-{%endblock%}
-{%block title%} Pagina principal de la tienda {%endblock%}
-{%block content%}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
+{% block title %} Página principal de la tienda {% endblock %}
 
-    <body class="h-100">
-        <div class="authincation h-100">
-            <div class="container-fluid h-100">
-                <div class="row justify-content-center h-100 align-items-center">
-                    <div class="col-md-6">
-                        <div class="authincation-content">
-                            <div class="row no-gutters">
-                                <div class="col-xl-12">
-                                    <div class="auth-form">
-                                        <h4 class="text-center mb-4">Registro</h4>
-                                        <form method="post">
-                                            {% csrf_token %}
+{% block navbar %}
+<!-- sobrescribiendo el bloque de navbar para que no aparezca en esta página -->
+{% endblock %}
+
+{% block content %}
+<body class="h-100">
+    <div class="authincation h-100">
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <h4 class="text-center mb-4">CREÁ TU CUENTA</h4>
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <div class="form-row">
                                             <div class="form-group">
                                                 <label for="id_nombre"><strong>Nombre</strong></label>
                                                 <input
@@ -36,18 +42,20 @@
                                                     class="form-control"
                                                     id="id_apellido"
                                                     name="apellido"
-                                                    placeholder="apellido"
+                                                    placeholder="Apellido"
                                                     required
                                                 />
                                             </div>
+                                        </div>
+                                        <div class="form-row">
                                             <div class="form-group">
-                                                <label for="id_numero_de_telefono"><strong>Numero de telefono</strong></label>
+                                                <label for="id_numero_de_telefono"><strong>Número de teléfono</strong></label>
                                                 <input
                                                     type="text"
                                                     class="form-control"
                                                     id="id_numero_de_telefono"
                                                     name="numero_de_telefono"
-                                                    placeholder="Numero de telefono"
+                                                    placeholder="Número de teléfono"
                                                     required
                                                 />
                                             </div>
@@ -62,14 +70,16 @@
                                                     required
                                                 />
                                             </div>
+                                        </div>
+                                        <div class="form-row">
                                             <div class="form-group">
-                                                <label for="id_address"><strong>Direccion</strong></label>
+                                                <label for="id_address"><strong>Dirección</strong></label>
                                                 <input
                                                     type="text"
                                                     class="form-control"
                                                     id="id_address"
                                                     name="address"
-                                                    placeholder="Direccion"
+                                                    placeholder="Dirección"
                                                     required
                                                 />
                                             </div>
@@ -84,6 +94,8 @@
                                                     required
                                                 />
                                             </div>
+                                        </div>
+                                        <div class="form-row">
                                             <div class="form-group">
                                                 <label for="id_password1"><strong>Contraseña</strong></label>
                                                 <input
@@ -106,19 +118,21 @@
                                                     required
                                                 />
                                             </div>
-                                            <div class="text-center mt-4">
-                                                <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
-                                            </div>
-                                        </form>
-                                        <div class="new-account mt-3">
-                                            <p>¿Ya te registraste? <a class="text-primary" href="{% url 'login' %}">Inicia sesión</a></p>
                                         </div>
-                                        {% for message in messages %}
-                                        <div class="form-group mt-3">
-                                            <p class="error-message text-danger">{{ message }}</p>
+                                        <br>
+                                        <div class="text-center mt-4">
+                                            <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
                                         </div>
-                                        {% endfor %}
+                                    </form>
+                                    <br>
+                                    <div class="new-account mt-3">
+                                        <p>¿Ya tenés una cuenta?   <a class="text-primary" href="{% url 'login' %}">   Inicia sesión   </a></p>
                                     </div>
+                                    {% for message in messages %}
+                                    <div class="form-group mt-3">
+                                        <p class="error-message text-danger">{{ message }}</p>
+                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
@@ -126,5 +140,6 @@
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 {% endblock %}
