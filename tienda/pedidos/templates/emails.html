@@ -1,0 +1,14 @@
+{%extends "base.html"%}
+{%load static %}
+{%block extra_head%}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{%endblock%}
+{%block title%} Pagina principal de la tienda {%endblock%}
+{%block content%}
+<body>
+    Holii, {{username}}<br/>
+    N° de pedido: {{pedido}}<br/>
+    Email de usuario: {{emailusuario}}
+    Lineas de pedido: {{lineas_pedidos}}
+</body>
+{%endblock%}
