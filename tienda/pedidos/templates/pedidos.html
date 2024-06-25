@@ -1,8 +1,26 @@
-{%extends "base.html"%}
-{%load static %}
-{%block extra_head%}
+{% extends "base.html" %}
+{% load static %}
+{% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/pedidos.css' %}">
-{%endblock%}
-{%block title%} Mis pedidos {%endblock%}
-{%block content%}
-{%endblock%}
+{% endblock %}
+{% block title %} Mis pedidos {% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Mis Pedidos</h2>
+    {% if pedidos %}
+    <div class="pedidos-lista">
+        {% for pedido in pedidos %}
+        <div class="pedido">
+            <h3>Pedido #{{ pedido.id }}</h3>
+            <p>Estado: {{ pedido.estado }}</p>
+            <p>Fecha de creación: {{ pedido.crear_en }}</p>
+            <p>Total: ${{ pedido.total|floatformat:"2" }}</p>
+            <!-- Aquí puedes agregar más detalles del pedido si lo deseas -->
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No tienes pedidos realizados.</p>
+    {% endif %}
+</div>
+{% endblock %}

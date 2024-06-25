@@ -48,6 +48,15 @@
                 <button type="submit" class="btn btn-secondary">Vaciar Carrito</button>
             </form>
         </div>
+
+        {% if request.session.carro.items %}
+        <div class="text-center">
+            <form method="post" action="{% url 'procesar_pedido' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success">Hacer pedido</button>
+            </form>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

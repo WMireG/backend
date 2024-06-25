@@ -1,6 +1,6 @@
 from django.contrib import admin
-from pedidos.models import Pedido
+from pedidos.models import Pedido, OrderItem
 
-@admin.register(Pedido)
-class PedidoAdmin(admin.ModelAdmin):
-    list_display = ("crear_en", "actualizar", "estado")
+
+admin.site.register(Pedido)
+admin.site.register(OrderItem)

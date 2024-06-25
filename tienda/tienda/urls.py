@@ -26,7 +26,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('django.contrib.auth.urls')),
-    path('', TiendaView.as_view(), name='tienda'),
+    path('', TiendaView.as_view(), name='index'),
     path('buscar/', buscar_view, name='buscar'),
     path("carrito/", include ("carrito.urls")),
     path("catalogo/", include ("catalogo.urls")),
