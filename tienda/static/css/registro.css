@@ -25,7 +25,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
     width: 100%;
-    max-width: 700px; /* Aumentar el ancho máximo */
+    max-width: 700px; 
 }
 
 .auth-form h4 {
@@ -48,8 +48,9 @@ body {
 }
 
 .form-control:focus {
-    border-color: #ff6600; /* Color naranja */
-    box-shadow: 0 0 5px rgba(255, 102, 0, 0.2); /* Color naranja */
+    border-color: #ff5722;
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
+    outline: none;
 }
 
 .form-group label {
@@ -59,8 +60,8 @@ body {
 }
 
 .btn-primary {
-    background-color: #ff6600; /* Color naranja */
-    border-color: #ff6600; /* Color naranja */
+    background-color: #ff6600; 
+    border-color: #ff6600; 
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
@@ -70,17 +71,17 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #e65c00; /* Color naranja oscuro */
-    border-color: #e65c00; /* Color naranja oscuro */
+    background-color: #e65c00; 
+    border-color: #e65c00; 
 }
 
 
 .text-primary {
-    color: #ff6600; /* Color naranja */
+    color: #ff6600; 
 }
 
 .text-primary:hover {
-    color: #e65c00; /* Color naranja oscuro */
+    color: #e65c00; 
     text-decoration: underline;
 }
 
