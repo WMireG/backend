@@ -15,7 +15,12 @@
             <p>Estado: {{ pedido.estado }}</p>
             <p>Fecha de creación: {{ pedido.crear_en }}</p>
             <p>Total: ${{ pedido.total|floatformat:"2" }}</p>
-            <!-- Aquí puedes agregar más detalles del pedido si lo deseas -->
+            {% if pedido.estado != 'Entregado' %}
+            <form action="{% url 'marcar_entregado' pedido.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success">Marcar como Entregado y Eliminar</button>
+            </form>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
