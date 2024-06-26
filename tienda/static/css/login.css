@@ -58,29 +58,37 @@ h4.text-center {
 }
 
 .form-control:focus {
-    border-color: #ff5722;
+    border-color: #d84a3b;
     box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
     outline: none;
 }
 
 
 .btn-primary {
-    background-color: #ff5722;
+    background-color: #d84a3b;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     width: 100%;
+    color: #fff; /* Color de la letra */
 }
 
 .btn-primary:hover {
-    background-color: #e64a19;
+    background-color: #bf3d31;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active {
+    transform: scale(0.95);
+    background-color: #a3342a;
 }
 
 
 .text-primary {
-    color: #ff5722;
+    color: #d84a3b;
 }
 
 .text-primary:hover {
