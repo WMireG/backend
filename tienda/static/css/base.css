@@ -6,9 +6,7 @@
     list-style: none;
 }
 
-/* base.css */
 
-/* Estilos generales */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -36,7 +34,7 @@ body {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(74, 72, 72, 0.1);
 }
 
 .navbar .container {
@@ -53,7 +51,7 @@ body {
 
 .nav-links {
     list-style-type: none;
-    margin: 0;
+    margin: -92px;
     padding: 0;
     display: flex;
 }
@@ -69,7 +67,8 @@ body {
 }
 
 .nav-links li a:hover {
-    color: #f4f4f4;
+    color: #e4704d;
+    transition: color 0.3s;
 }
 
 /* Estilos del formulario de búsqueda */
@@ -79,14 +78,14 @@ body {
 }
 
 .search-form input[type="text"] {
-    padding: 8px;
+    padding: 13px 45px;
     border: none;
     border-radius: 4px 0 0 4px;
     outline: none;
 }
 
 .search-form button {
-    padding: 8px 16px;
+    padding: 13px 16px;
     border: none;
     background-color: #ff5722;
     color: #fff;
@@ -136,5 +135,5 @@ body {
 }
 
 .footer .social-links a:hover {
-    color: #ff5722;
+    color: #e4704d;
 }

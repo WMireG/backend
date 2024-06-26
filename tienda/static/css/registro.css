@@ -75,7 +75,6 @@ body {
     border-color: #e65c00; 
 }
 
-
 .text-primary {
     color: #ff6600; 
 }
@@ -85,11 +84,9 @@ body {
     text-decoration: underline;
 }
 
-
 .error-message {
     font-size: 14px;
 }
-
 
 .form-row {
     display: flex;

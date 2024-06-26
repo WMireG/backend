@@ -1,28 +1,27 @@
 {%extends "base.html"%}
 {%load static %}
 {%block extra_head%}
-<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {%endblock%}
 {%block title%} Pagina principal de la tienda {%endblock%}
 {%block content%}
 
 <body>
-    <header>
-        <h1>Bienvenidos a Nuestra Tienda de Discos</h1>
-    </header>
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Catálogo</a>
-        <a href="#">Ofertas</a>
-        <a href="#">Contacto</a>
-    </nav>
-    <div class="container">
-        <h2>Los Mejores Discos a Tu Alcance</h2>
-        <p>Explora nuestra colección de discos de todos los géneros y épocas. Tenemos algo para cada amante de la música.</p>
+
+    <div class="bienvenida-container">
+
+        <div class="texto">
+            <h1>Bienvenidos a <br> Musik!</h1>
+            <p>En nuestro Shop vas a poder encontrar <br>CDs, DVDs, Vinilos y Bluray nuevos <br>(nacionales e importados), tanto <br> nuevos como usados. </p>
+        </div>
+        <div class="imagenes">
+            <img src="{% static 'image/portada.jpg' %}" alt="Discos de Música">
+            <img src="{% static 'image/portadados.jpg' %}" alt="Discos de Música">
+            <img src="{% static 'image/portadatres.jpg' %}" alt="Discos de Música">
+        </div>
+
     </div>
-    <footer>
-        <p>&copy; 2024 Tienda de Discos. Todos los derechos reservados.</p>
-    </footer>
+
 </body>
 
 {%endblock%}
