@@ -6,7 +6,6 @@
     list-style: none;
 }
 
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -44,10 +43,13 @@ body {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
+    font-family: "Rubik Mono One", monospace;
+    font-weight:unset;
+    font-style: normal;
+    font-size: 20px;
     margin: 0;
 }
+
 
 .nav-links {
     list-style-type: none;
@@ -67,7 +69,7 @@ body {
 }
 
 .nav-links li a:hover {
-    color: #e4704d;
+    color: #d84a3b;
     transition: color 0.3s;
 }
 
@@ -87,7 +89,7 @@ body {
 .search-form button {
     padding: 13px 16px;
     border: none;
-    background-color: #ff5722;
+    background-color: #d84a3b;
     color: #fff;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
@@ -95,7 +97,7 @@ body {
 }
 
 .search-form button:hover {
-    background-color: #e64a19;
+    background-color: #d84a3b;
 }
 
 /* Estilos del contenido */
@@ -135,5 +137,12 @@ body {
 }
 
 .footer .social-links a:hover {
-    color: #e4704d;
+    color: #d84a3b;
+}
+
+
+h3{
+    font-family: "Rubik Mono One", monospace;
+    font-weight:unset;
+    font-style: normal;
 }

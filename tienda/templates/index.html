@@ -2,6 +2,9 @@
 {%load static %}
 {%block extra_head%}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
 {%endblock%}
 {%block title%} Pagina principal de la tienda {%endblock%}
 {%block content%}
@@ -13,13 +16,14 @@
         <div class="bienvenida-container">
 
             <div class="texto">
-                <h1>Bienvenidos a <br> Musik!</h1>
-                <p>En nuestro Shop vas a poder encontrar <br>CDs, DVDs, Vinilos y Bluray nuevos <br>(nacionales e importados), tanto <br> nuevos como usados. </p>
+                <h1>BIENVENIDOS A</h1> <h2>Musik!</h2> 
+                <p>En nuestro Shop vas a poder encontrar <br>CDs, DVDs, Vinilos y Bluray nuevos <br>(nacionales e importados), tanto <br> nuevos como usados. </p> <br>
+                <a href="{% url 'catalogo' %}" class="explore-button">Explorar tienda</a>
+                <a href="https://open.spotify.com/" class="explore-button">Popular albums</a>
             </div>
 
             <div class="imagenes">
                 <img src="{% static 'image/portada.jpg' %}" alt="Discos de Música">
-                
             </div>
 
         </div>
