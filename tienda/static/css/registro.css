@@ -48,7 +48,7 @@ body {
 }
 
 .form-control:focus {
-    border-color: #ff5722;
+    border-color: #d84a3b;
     box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
     outline: none;
 }
@@ -60,27 +60,35 @@ body {
 }
 
 .btn-primary {
-    background-color: #ff6600; 
-    border-color: #ff6600; 
-    padding: 10px;
-    font-size: 16px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d84a3b;
+    color: #fff;
+    text-decoration: none;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
     width: 100%;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
 .btn-primary:hover {
-    background-color: #e65c00; 
-    border-color: #e65c00; 
+    background-color: #c13b2d;
 }
 
+
+
+
+
+
+
+
 .text-primary {
-    color: #ff6600; 
+    color: #d84a3b; 
 }
 
 .text-primary:hover {
-    color: #e65c00; 
+    color: #d84a3b; 
     text-decoration: underline;
 }
 
