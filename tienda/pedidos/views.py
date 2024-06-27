@@ -45,13 +45,10 @@ class ProcesarPedidoView(LoginRequiredMixin, View):
         # Redirige a la página de pedidos o a donde sea necesario
         return redirect('pedidos')
     
-class MarcarComoEntregadoView(View):
-    
-    def post(self, request, pedido_id, *args, **kwargs):
-        pedido = get_object_or_404(Pedido, id=pedido_id)
-        pedido.marcar_como_entregado()
-        pedido.eliminar_pedido()
-        return redirect('pedidos')  # Redirige de vuelta a la lista de pedidos    
+class BorrarPedidos(View):
+    def post(self, request, *args, **kwargs):
+        Pedido.objects.all().delete()
+        return redirect('catalogo')
 
 class ListaPedidosView(LoginRequiredMixin, ListView):
     template_name = 'pedidos.html'
