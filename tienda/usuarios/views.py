@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView
 from django.views.generic.edit import CreateView
-from django.views.generic import View, TemplateView
+from django.views.generic import TemplateView
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import logout
-
 from autenticacion.forms import RegistrationForm
+
 
 class Home(TemplateView):
     template_name = "usuarios.html"
@@ -20,14 +19,7 @@ class CustomLoginView(LoginView):
             self.request, "Datos incorrectos, por favor intentalo de nuevo"
         )
         return super().form_invalid(form)
-    
-
-# class CustomLogoutView(LogoutView):
-#     next_page = '/usuario'
-#     def dispatch(self, request, *args, **kwargs):
-#         messages.success(request, "¡Has cerrado sesión correctamente!")
-#         return super().dispatch(request, *args, **kwargs)
-
+  
 class RegistrationView(CreateView):
     form_class = RegistrationForm
     success_url = reverse_lazy("login")
@@ -46,17 +38,6 @@ class RegistrationView(CreateView):
             for error in errors:
                 messages.error(self.request, f"{field}: {error}")
         return super().form_invalid(form)
-
-# class LogoutConfirmationView(LoginView):
-#     template_name = "logout.html"
-
-#     def form_invalid(self,form):
-#         messages.error(
-#             self.request, "Datos incorrectos, por favor intentalo de nuevo"
-#         )
-#         return super().form_invalid(form)
-
-
 class LogoutConfirmationView(LoginView):
     template_name = 'logout.html'
 

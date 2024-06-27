@@ -5,7 +5,6 @@ from usuarios.views import CustomLoginView, RegistrationView, LogoutConfirmation
 urlpatterns = [
     path('', Home.as_view(), name="usuarios"), 
     path("login/", CustomLoginView.as_view(), name="login"),
-    #path("logout/", CustomLogoutView.as_view(), name="logout"),
     path("registro/", RegistrationView.as_view(), name="registro"),
     path("confirm_logout/", LogoutConfirmationView.as_view(), name="confirm_logout"),
 ]

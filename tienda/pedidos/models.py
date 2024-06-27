@@ -1,9 +1,8 @@
-from django.db import models
+from django.db import models, transaction
 from usuarios.models import CustomUser
 from catalogo.models import Producto
-from django.db.models import F, Sum, FloatField
+from django.db.models import F, Sum
 
-# Create your models here.
 class Pedido(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     crear_en = models.DateTimeField(auto_now_add=True)
@@ -16,23 +15,33 @@ class Pedido(models.Model):
         ("Cancelado", "Cancelado")
     ], default="Pendiente")
     
+    total = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # Define el campo total
+    
     def __str__(self):
         return str(self.id)
     
-    @property
-    def total(self):
-        total_pedido = 0
-        order_items = self.orderitem_set.all()
-        for item in order_items:
-            total_pedido += item.producto.precio * item.cantidad
-        return total_pedido
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        
+    @transaction.atomic
+    def actualizar_total(self):
+        total_pedido = self.orderitem_set.aggregate(total=Sum(F('producto__precio') * F('cantidad'), output_field=models.FloatField()))['total'] or 0
+        self.total = total_pedido
+        Pedido.objects.filter(id=self.id).update(total=self.total)  # Actualiza el total sin llamar a save() recursivamente
+    
+    def marcar_como_entregado(self):
+        self.estado = "Entregado"
+        self.save(update_fields=['estado'])
+    
+    @transaction.atomic
+    def eliminar_pedido(self):
+        self.delete()
     
     class Meta:
         db_table = 'pedidos'
         verbose_name = 'pedido'
         verbose_name_plural = 'pedidos'
         ordering = ['id']
-
 
 class OrderItem(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)

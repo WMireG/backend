@@ -31,8 +31,7 @@ urlpatterns = [
     path("carrito/", include ("carrito.urls")),
     path("catalogo/", include ("catalogo.urls")),
     path("pedidos/", include ("pedidos.urls")),
-    path("usuarios/", include ("usuarios.urls")),
-    #path('login/', include("login.html")), 
+    path("usuarios/", include ("usuarios.urls")), 
 ]
 
 if settings.DEBUG:
