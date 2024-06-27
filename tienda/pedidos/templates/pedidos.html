@@ -14,13 +14,13 @@
             <h3>Pedido #{{ pedido.id }}</h3>
             <p>Estado: {{ pedido.estado }}</p>
             <p>Fecha de creación: {{ pedido.crear_en }}</p>
-            <p>Total: ${{ pedido.total|floatformat:"2" }}</p>
-            {% if pedido.estado != 'Entregado' %}
-            <form action="{% url 'marcar_entregado' pedido.id %}" method="post">
+            <p>Total: ${{ pedido.total|floatformat:"2" }}
+                
+            </p><form method="post" action="{% url 'borrar_pedidos' %}">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-success">Marcar como Entregado y Eliminar</button>
+                <button type="submit" class="btn btn-danger">Borrar Todos los Pedidos</button>
             </form>
-            {% endif %}
+            
         </div>
         {% endfor %}
     </div>
