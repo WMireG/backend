@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import redirect
+from django.views import View
 from django.views.generic import TemplateView
-from .carro import Carro
-from catalogo.models import Producto
 from django.contrib.auth.decorators import login_required
-
+from django.utils.decorators import method_decorator
+from catalogo.models import Producto
+from carrito.carro import Carro
 
 class Home(TemplateView):
     template_name = "carrito.html"
@@ -23,27 +24,26 @@ class Home(TemplateView):
         context['total'] = carro.obtener_total()
         return context
     
-@login_required
-def agregar_producto(request, producto_id):
-    carro = Carro(request)
-    producto = Producto.objects.get(id=producto_id)
-    carro.agregar(producto=producto)
-    return redirect("catalogo")
+@method_decorator(login_required, name='dispatch')
+class OperacionesCarro(View):
+    def post(self, request, action, producto_id):
+        carro = Carro(request)
+        producto = Producto.objects.get(id=producto_id)
 
-@login_required
-def eliminar_producto(request, producto_id):
-    carro = Carro(request)
-    producto = Producto.objects.get(id=producto_id)
-    carro.eliminar(producto=producto)
-    return redirect("carrito")
+        if action == 'agregar':
+            carro.agregar(producto)
+            next_url = 'catalogo'
+        elif action == 'eliminar':
+            carro.eliminar(producto)
+            next_url = 'carrito'
+        elif action == 'restar':
+            carro.restar_producto(producto)
+            next_url = 'carrito'
+        elif action == 'limpiar':
+            carro.limpiar_carro()
+            next_url = 'catalogo'
+        else:
+            # Manejar caso no definido
+            next_url = 'catalogo'
 
-def restar_producto(request, producto_id):
-    carro = Carro(request)
-    producto=Producto.objects.get(id=producto_id)
-    carro.restar_producto(producto=producto)
-    return redirect("carrito")
-
-def limpiar_carro(request):
-    carro = Carro(request)
-    carro.limpiar_carro()
-    return redirect("catalogo")
+        return redirect(next_url)
