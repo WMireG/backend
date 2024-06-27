@@ -31,7 +31,7 @@
 }
 
 .login-container p {
-    margin-bottom: 20px; /* Ajusta el margen inferior del párrafo */
+    margin-bottom: 10px; /* Ajusta el margen inferior del párrafo */
 }
 
 .login-container button {
@@ -59,6 +59,36 @@
     flex-direction: column;
     align-items: center;
 }
+
+
+/*agrego parte de "mi perfil" de usuarios.html*/
+.authincation-content h1 {
+    margin-bottom: 20px;
+}
+
+.perfil-info {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.perfil-info p {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.perfil-info p strong {
+    font-weight: bold;
+    color: #191716;
+}
+
+
+
 
 h4.text-center {
     color: #191716;

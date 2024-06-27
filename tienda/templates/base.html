@@ -18,7 +18,7 @@
         {% block navbar %}
         <nav class="navbar">
             <div class="container">
-                <h1 class="logo">MUSIK!</h1>
+                <h1 class="logo"><a href="{% url 'index' %}">MUSIK!</a></h1>
                 
                 <!-- Formulario de búsqueda -->
                 <form action="{% url 'buscar' %}" method="GET" class="search-form">
