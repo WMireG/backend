@@ -2,36 +2,43 @@
 {% load static %}
 
 {% block extra_head %}
-    <link rel="stylesheet" href="{% static 'css/usuarios.css' %}">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock %}
 
 {% block title %} Mi Usuario {% endblock %}
 
 {% block content %}
     {% if user.is_authenticated %}
-        <div class="container">
-            <h1>Mi Perfil</h1>
-            <div class="perfil-info">
-                <p><strong>Nombre:</strong> {{ user.nombre }}</p>
-                <p><strong>Apellido:</strong> {{ user.apellido }}</p>
-                <p><strong>Correo Electrónico:</strong> {{ user.email }}</p>
-                <p><strong>Usuario:</strong> {{ user.username }}</p>
-                <p><strong>Telefono:</strong> {{ user.numero_de_telefono }}</p>
-                <p><strong>Direccion:</strong> {{ user.address }}</p>
-            </div>
-            <div class="boton-cerrar-sesion">
-                <form action="{% url 'logout' %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Cerrar sesión</button>
-                </form>
+        <div class="login-wrapper">
+            <div class="login-container">
+                <div class="authincation-content">
+                    <h1 class="text-center mb-4">Mi Perfil</h1>
+                    <div class="perfil-info">
+                        <p><strong>Nombre:</strong> {{ user.nombre }}</p>
+                        <p><strong>Apellido:</strong> {{ user.apellido }}</p>
+                        <p><strong>Correo Electrónico:</strong> {{ user.email }}</p>
+                        <p><strong>Usuario:</strong> {{ user.username }}</p>
+                        <p><strong>Telefono:</strong> {{ user.numero_de_telefono }}</p>
+                        <p><strong>Dirección:</strong> {{ user.address }}</p>
+                    </div>
+                    <div class="boton-cerrar-sesion">
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary">Cerrar sesión</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     {% else %}
-        <!-- Si el usuario no está autenticado, mostrar botón para iniciar sesión -->
-        <div class="container">
-            <h1>Iniciar Sesión</h1>
-            <p>Por favor, inicia sesión para acceder a tu perfil.</p>
-            <a href="{% url 'login' %}" class="btn btn-primary">Iniciar Sesión</a>
+        <div class="login-wrapper">
+            <div class="login-container">
+                <div class="authincation-content">
+                    <h1 class="text-center ">Iniciar Sesión</h1>
+                    <p>Por favor, inicia sesión para acceder a tu perfil.</p>
+                    <a href="{% url 'login' %}" class="btn btn-primary">Iniciar Sesión</a>
+                </div>
+            </div>
         </div>
     {% endif %}
 {% endblock %}

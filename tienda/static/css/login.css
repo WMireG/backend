@@ -10,19 +10,49 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 50vh;
     background-color: #f4f4f4;
 }
 
 .login-container {
     background-color: #fff;
-    padding: 20px;
+    padding: 60px;    /*cambie este 20px*/
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
     text-align: center;
 }
+
+/*agrego nuevo*/
+.login-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px; /* Ajusta el margen inferior del h1 */
+}
+
+.login-container p {
+    margin-bottom: 20px; /* Ajusta el margen inferior del párrafo */
+}
+
+.login-container button {
+    margin-top: 20px; /* Ajusta el margen superior del botón */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    outline: none;
+}
+
+
+
+/**/
+
+
+
 
 .authincation-content {
     display: flex;
@@ -103,3 +133,5 @@ h4.text-center {
 .new-account {
     margin-top: 20px;
 }
+
+
