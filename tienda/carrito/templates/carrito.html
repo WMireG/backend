@@ -43,9 +43,9 @@
         <div class="total">
             <h3 class="totalh3">Total del Carrito: ${{ total|floatformat:"2" }}</h3>
             <!-- Botón para limpiar el carrito -->
-            <form action="{% url 'limpiar_carro' %}" method="post">
+            <form method="post" action="{% url 'limpiar_carro' %}">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-secondary">Vaciar Carrito</button>
+                <button type="submit">Limpiar Carro</button>
             </form>
         </div>
 

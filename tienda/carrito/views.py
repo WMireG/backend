@@ -26,24 +26,29 @@ class Home(TemplateView):
     
 @method_decorator(login_required, name='dispatch')
 class OperacionesCarro(View):
-    def post(self, request, action, producto_id):
+    def post(self, request, *args, **kwargs):
+        action = kwargs.get('action')
+        producto_id = kwargs.get('producto_id', None)  # Set default value to None
         carro = Carro(request)
-        producto = Producto.objects.get(id=producto_id)
 
-        if action == 'agregar':
-            carro.agregar(producto)
-            next_url = 'catalogo'
-        elif action == 'eliminar':
-            carro.eliminar(producto)
-            next_url = 'carrito'
-        elif action == 'restar':
-            carro.restar_producto(producto)
-            next_url = 'carrito'
-        elif action == 'limpiar':
-            carro.limpiar_carro(producto)
-            next_url = 'catalogo'
+        if action == 'limpiar':
+            carro.limpiar_carro()
+            return redirect('catalogo')
+
+        if producto_id:
+            producto = Producto.objects.get(id=producto_id)
+            if action == 'agregar':
+                carro.agregar(producto)
+                next_url = 'catalogo'
+            elif action == 'eliminar':
+                carro.eliminar(producto)
+                next_url = 'carrito'
+            elif action == 'restar':
+                carro.restar_producto(producto)
+                next_url = 'carrito'
+            else:
+                next_url = 'catalogo'
         else:
-            # Manejar caso no definido
             next_url = 'catalogo'
 
         return redirect(next_url)

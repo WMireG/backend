@@ -145,7 +145,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = 'usuarios.CustomUser'
 LOGIN_REDIRECT_URL = '/usuarios'
 LOGOUT_REDIRECT_URL = '/catalogo'
-LOGIN_URL = '/usuario/login'
+LOGIN_URL = '/usuarios/login'
 
 #esto es para que me tome el Username como requisito de Login y no que sea el Email.
 AUTHENTICATION_BACKENDS = [
