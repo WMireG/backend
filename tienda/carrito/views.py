@@ -40,7 +40,7 @@ class OperacionesCarro(View):
             carro.restar_producto(producto)
             next_url = 'carrito'
         elif action == 'limpiar':
-            carro.limpiar_carro()
+            carro.limpiar_carro(producto)
             next_url = 'catalogo'
         else:
             # Manejar caso no definido

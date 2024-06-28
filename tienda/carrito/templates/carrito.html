@@ -41,7 +41,7 @@
         {% endfor %}
 
         <div class="total">
-            <h3>Total del Carrito: ${{ total|floatformat:"2" }}</h3>
+            <h3 class="totalh3">Total del Carrito: ${{ total|floatformat:"2" }}</h3>
             <!-- Botón para limpiar el carrito -->
             <form action="{% url 'limpiar_carro' %}" method="post">
                 {% csrf_token %}

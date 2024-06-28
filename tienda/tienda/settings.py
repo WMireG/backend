@@ -168,10 +168,10 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 # # Dirección de correo electrónico desde la cual enviar los correos
-EMAIL_HOST_USER = 'walteriorlz@gmail.com'  # Reemplaza con tu dirección de Gmail o del servidor SMTP
+EMAIL_HOST_USER = ''  # Reemplaza con tu dirección de Gmail o del servidor SMTP
 
 # # Contraseña de la dirección de correo electrónico
-EMAIL_HOST_PASSWORD = 'dffxmOY12VYQ9nqsLvLp'  # Reemplaza con la contraseña de tu correo electrónico
+EMAIL_HOST_PASSWORD = ''  # Reemplaza con la contraseña de tu correo electrónico
 
 # # Dirección de correo electrónico opcional para recibir notificaciones de errores
 # # EMAIL_ERROR_TO = ''  # Descomenta y completa si deseas recibir notificaciones de errores

@@ -53,7 +53,23 @@ h2 {
 
 .eliminar-producto button, .restar-producto button {
     margin-top: 10px;
-    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #d84a3b; /* Color principal */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Añadir margen entre los botones */
+.eliminar-producto {
+    margin-right: 10px;
+}
+
+.eliminar-producto button:hover, .restar-producto button:hover {
+    background-color: #b03e34; /* Color en hover */
 }
 
 /* Estilos para el total del carrito */
@@ -67,9 +83,45 @@ h2 {
     margin-bottom: 10px;
 }
 
+.totalh3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #333; /* Color que combina con los otros textos */
+}
+
+
 /* Estilos para el botón de vaciar carrito */
 .total button {
     width: 150px;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #6c757d; /* Color secundario */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.total button:hover {
+    background-color: #5a6268; /* Color en hover */
+}
+
+/* Estilos para el botón de hacer pedido */
+.text-center button {
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745; /* Color de éxito */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.text-center button:hover {
+    background-color: #218838; /* Color en hover */
 }
 
 /* Estilos para la imagen por defecto */
