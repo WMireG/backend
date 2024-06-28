@@ -28,7 +28,7 @@ class Home(TemplateView):
 class OperacionesCarro(View):
     def post(self, request, *args, **kwargs):
         action = kwargs.get('action')
-        producto_id = kwargs.get('producto_id', None)  # Set default value to None
+        producto_id = kwargs.get('producto_id', None) 
         carro = Carro(request)
 
         if action == 'limpiar':
