@@ -152,38 +152,3 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     
 ]
-
-# Configuración para el envío de correos electrónicos
-
-# # Backend para el envío de correos electrónicos
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-# # Host del servidor SMTP que vas a usar (por ejemplo, Gmail)
-EMAIL_HOST = 'smtp.gmail.com'
-
-# # Puerto del servidor SMTP para conexiones seguras TLS (para Gmail es 587)
-EMAIL_PORT = 587
-
-# # Método de seguridad del servidor SMTP (TLS es común para Gmail)
-EMAIL_USE_TLS = True
-
-# # Dirección de correo electrónico desde la cual enviar los correos
-EMAIL_HOST_USER = ''  # Reemplaza con tu dirección de Gmail o del servidor SMTP
-
-# # Contraseña de la dirección de correo electrónico
-EMAIL_HOST_PASSWORD = ''  # Reemplaza con la contraseña de tu correo electrónico
-
-# # Dirección de correo electrónico opcional para recibir notificaciones de errores
-# # EMAIL_ERROR_TO = ''  # Descomenta y completa si deseas recibir notificaciones de errores
-
-# # Configuración adicional de correos electrónicos
-DEFAULT_FROM_EMAIL = 'tu_correo@gmail.com'  # Reemplaza con tu dirección de Gmail o del servidor SMTP
-
-# # URLs a las que Django permitirá enviar correos (permite todas si es None)
-ALLOWED_HOSTS = []  # Ajusta según tus necesidades de seguridad
-
-# # Configuración de la zona horaria de tu aplicación
-TIME_ZONE = 'America/Lima'
-
-# # Idioma de la interfaz de administración y las aplicaciones incluidas
-LANGUAGE_CODE = 'es-pe'
