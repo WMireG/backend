@@ -10,19 +10,17 @@
     {% if pedidos %}
     <div class="pedidos-lista">
         {% for pedido in pedidos %}
-        <div class="pedido">
+        <div class="pedido-card">
             <h3>Pedido #{{ pedido.id }}</h3>
-            <p>Estado: {{ pedido.estado }}</p>
-            <p>Fecha de creación: {{ pedido.crear_en }}</p>
-            <p>Total: ${{ pedido.total|floatformat:"2" }}
-                
-            </p><form method="post" action="{% url 'borrar_pedidos' %}">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-danger">Borrar Todos los Pedidos</button>
-            </form>
-            
+            <p><strong>Estado:</strong> {{ pedido.estado }}</p>
+            <p><strong>Fecha de creación:</strong> {{ pedido.crear_en }}</p>
+            <p><strong>Total:</strong> ${{ pedido.total|floatformat:"2" }}</p>
         </div>
         {% endfor %}
+        <form method="post" action="{% url 'borrar_pedidos' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger borrar-todos">Borrar pedidos</button>
+        </form>
     </div>
     {% else %}
     <p>No tienes pedidos realizados.</p>
